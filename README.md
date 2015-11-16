@@ -98,4 +98,88 @@
     Total time: 2.435 secs
 
     ```
-  
+
+### Set up the project
+---
+  First you set up a Java project for Gradle to build. To keep the focus on Gradle, make the project as simple as possible for now.
+
+##### Create the directory structure
++ Create a root project directory named `HelloWorld` and `cd HelloWorld` .
++ In a project directory of your choosing, create the following subdirectory structure;
+
++ For example, with `mkdir -p src/main/java/hello` on *nix systems:
+
++ on Windows you can create this directory manually.
+
+```
+└── src
+    └── main
+        └── java
+            └── hello
+```
+Within the `src/main/java/hello` directory, you can create any Java classes you want. For simplicity’s sake and for consistency with the rest of this guide, Spring recommends that you create two classes: `HelloWorld.java` and `Greeter.java`.
+
+`src/main/java/hello/HelloWorld.java`
+
+```
+package hello;
+
+public class HelloWorld {
+  public static void main(String[] args) {
+    Greeter greeter = new Greeter();
+    System.out.println(greeter.sayHello());
+  }
+}
+```
+
+`src/main/java/hello/Greeter.java`
+
+```
+package hello;
+
+public class Greeter {
+  public String sayHello() {
+    return "Hello world!";
+  }
+}
+```
+Our project setup is done. :)
+
+### Build Java code
+---
+Now we are behind few step.
+
++ `cd HelloWorld` and run `gradle init`.
+
+  After finished init you can see new file and directory are created.
++ Open `build.gradle` file and add this line `apply plugin: 'java'`.
+
++ Now Run this command `gradle build`.
+
+    To see the results of the build effort, take a look in the build folder. Therein you’ll find several directories, including these three notable folders:
+
+    + classes. The project’s compiled .class files.
+    + libs. Assembled project libraries (usually JAR and/or WAR files).
+
+
++ Now Open `build.gradle` file and add this two line
+  ```
+  apply plugin: 'application'
+  mainClassName = 'hello.HelloWorld'
+```
+
++ We are almost done just run this command `gradle run`.
+
+  Now you can see the output
+  ```
+  :compileJava UP-TO-DATE
+  :processResources UP-TO-DATE
+  :classes UP-TO-DATE
+  :run
+
+  Hello world!
+
+  BUILD SUCCESSFUL
+  Total time: 4.009 secs
+  ```
+ Yes we have done .... :).
