@@ -56,3 +56,46 @@
 
     Total time: 6.317 secs
     ```
+    You now have Gradle installed.
+
+  #### Find out what Gradle can do
+  ---
+  Now that Gradle is installed, see what it can do. Before you even create a build.gradle file for the project.
+
+   + You can ask it what tasks are available:
+   `gradle tasks`
+
+    + If you run `gradle tasks` this command out side your project directory then you can see the output.
+
+    ```
+    :tasks
+    ------------------------------------------------------------
+    All tasks runnable from root project
+    ------------------------------------------------------------
+
+    Build Setup tasks
+    -----------------
+    init - Initializes a new Gradle build. [incubating]
+    wrapper - Generates Gradle wrapper files. [incubating]
+
+    Help tasks
+    ----------
+    components - Displays the components produced by root project 'jabed'. [incubating]
+    dependencies - Displays all dependencies declared in root project 'jabed'.
+    dependencyInsight - Displays the insight into a specific dependency in root project 'jabed'.
+    help - Displays a help message.
+    model - Displays the configuration model of root project 'jabed'. [incubating]
+    projects - Displays the sub-projects of root project 'jabed'.
+    properties - Displays the properties of root project 'jabed'.
+    tasks - Displays the tasks runnable from root project 'jabed'.
+
+    To see all tasks and more detail, run gradle tasks --all
+
+    To see more detail about a task, run gradle help --task <task>
+
+    BUILD SUCCESSFUL
+
+    Total time: 2.435 secs
+
+    ```
+  
