@@ -162,7 +162,7 @@ Now we are behind few step.
     + libs. Assembled project libraries (usually JAR and/or WAR files).
 
 
-+ Now Open `build.gradle` file and add this two line
++ To make this code runnable, we can use gradle’s application plugin. Add this to your `build.gradle` file.Now Open `build.gradle` file and add this two line
   ```
   apply plugin: 'application'
   mainClassName = 'hello.HelloWorld'
@@ -215,8 +215,8 @@ public class HelloWorld {
   ```
     repositories {
       mavenCentral()
-  }
-```
+    }
+  ```
 The `repositories` block indicates that the build should resolve its dependencies from the Maven Central repository.
 
 + Now that we’re ready for 3rd party libraries, let’s declare some in your `build.gradle` file.
@@ -237,14 +237,119 @@ The `repositories` block indicates that the build should resolve its dependencie
     + `testCompile`. Dependencies used for compiling and running tests, but not required for building or running the project’s runtime code.
 
 
-+ Finally, let’s specify the name for our JAR artifact.
++ Finally, let’s specify the name for our JAR artifact ( optional).
 
   ```
   jar {
-      baseName = 'jb-hello-world-gradle'
+      baseName = 'hello-world-gradle'
       version =  '0.1.0'
-  }
+    }
   ```
 The `jar` block specifies how the JAR file will be named. In this case, it will render `jb-hello-world-gradle-0.1.0.jar`.
 
 Now if you run `gradle build`, Gradle should resolve the Joda Time dependency from the Maven Central repository and the build will succeed.
+
+### Build your project with Gradle Wrapper
+---
+The Gradle Wrapper is the preferred way of starting a Gradle build.
+    - It consists of a batch script for Windows.
+    - and a shell script for OS X and Linux.
+
++ These scripts allow you to run a Gradle build without requiring that Gradle be installed on your system.
+
++ To make this possible, add the following block to the bottom of your `build.gradle`.
+
+  ```
+  task wrapper(type: Wrapper) {
+      gradleVersion = '2.8'
+  }
+  ```
++ Run the following command to download and initialize the wrapper scripts: `gradle wrapper`.
+
++ After this task completes, you will notice a few new files. The two scripts are in the root of the folder, while the wrapper jar and properties files have been added to a new `gradle/wrapper` folder.
+
+    ```
+    └── HelloWorld
+    └── gradlew
+    └── gradlew.bat
+    └── gradle
+        └── wrapper
+            └── gradle-wrapper.jar
+            └── gradle-wrapper.properties
+    ```
+
+The Gradle Wrapper is now available for building your project.
+
+Add it to your version control system, and everyone that clones your project can build it just the same. It can be used in the exact same way as an installed version of Gradle. Run the wrapper script to perform the build task, just like you did previously:
+
+    ./gradlew build
+
+The first time you run the wrapper for a specified version of Gradle, it downloads and caches the Gradle binaries for that version. The Gradle Wrapper files are designed to be committed to source control so that anyone can build the project without having to first install and configure a specific version of Gradle.
+
+At this stage, you will have built your code. You can see the results here:
+
+```
+build
+├── classes
+│   └── main
+│       └── hello
+│           ├── Greeter.class
+│           └── HelloWorld.class
+├── dependency-cache
+├── libs
+│   └── hello-world-gradle-0.1.0.jar
+└── tmp
+    └── jar
+        └── MANIFEST.MF
+  ```
+Included are the two expected class files for Greeter and HelloWorld, as well as a JAR file. Take a quick peek:
+
+```
+$ jar tvf build/libs/hello-world-gradle-0.1.0.jar
+0 Mon Nov 16 13:41:22 BDT 2015 META-INF/
+  25 Mon Nov 16 13:41:22 BDT 2015 META-INF/MANIFEST.MF
+   0 Mon Nov 16 13:41:22 BDT 2015 hello/
+ 988 Mon Nov 16 13:41:22 BDT 2015 hello/HelloWorld.class
+ 369 Mon Nov 16 13:41:22 BDT 2015 hello/Greeter.class
+
+```
+
+To wrap things up for this guide, here is the completed `build.gradle` file:
+
+`build.gradle`
+
+```
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+
+mainClassName = 'hello.HelloWorld'
+
+// tag::repositories[]
+repositories {
+    mavenCentral()
+}
+// end::repositories[]
+
+// tag::jar[]
+jar {
+    baseName = 'hello-world-gradle'
+    version =  '0.1.0'
+}
+// end::jar[]
+
+// tag::dependencies[]
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile "joda-time:joda-time:2.2"
+}
+// end::dependencies[]
+
+// tag::wrapper[]
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.3'
+}
+// end::wrapper[]
+```
