@@ -54,8 +54,11 @@ jar {
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
 
+// joda-time provides the time stamping used in HelloWorld.java
+// junit is to run the TestGreeter.java and others
 dependencies {
     compile "joda-time:joda-time:2.2"
+    testCompile 'junit:junit:4.12'
 }
 // end::dependencies[]
 
