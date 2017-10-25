@@ -31,13 +31,18 @@ dependencies {
 }
 */
 
+// The Java plugin adds Java compilation along with testing and bundling capabilities to a project
 apply plugin: 'java'
+// The Eclipse plugins generate files used by Eclipse,  making it possible to import project into Eclipse.
 apply plugin: 'eclipse'
+//The Application plugin facilitates creating an executable JVM application. 
 apply plugin: 'application'
 
+// mainClassName = 'package.mainClassName'
 mainClassName = 'hello.HelloWorld'
 
 // tag::repositories[]
+// Usually, a Java project will have some dependencies on external JAR files.  Gradle searches here for them
 repositories {
     mavenCentral()
 }
@@ -45,7 +50,7 @@ repositories {
 
 // tag::jar[]
 jar {
-    baseName = 'jb-hello-world'
+    baseName = 'dl-hello-world'
     version =  '0.1.0'
 }
 // end::jar[]

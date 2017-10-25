@@ -10,7 +10,7 @@ public class TestGreeter {
 
    private Greeter g;
 	
-   @Before
+   @BeforeAll
    public void setUp() throws Exception 
    {
       g = new Greeter();
