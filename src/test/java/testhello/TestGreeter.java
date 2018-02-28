@@ -1,12 +1,12 @@
 package hello;
 
-import static org.junit.Assert.*;
-//import static org.junit.jupiter.api.Assertions.*;
+//import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.Before;
-import org.junit.Test;
-//import org.junit.jupiter.api.BeforeAll;
-//import org.junit.jupiter.api.Test;
+//import org.junit.Before;
+//import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 
 
@@ -14,7 +14,7 @@ public class TestGreeter {
 
    private Greeter g;
 	
-   @Before
+   @BeforeAll
    public void setUp() throws Exception 
    {
       g = new Greeter();

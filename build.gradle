@@ -63,8 +63,8 @@ targetCompatibility = 1.7
 // junit is to run the TestGreeter.java and others
 dependencies {
     compile "joda-time:joda-time:2.2"
-    testCompile 'junit:junit:4.12'
- //   testCompile("org.junit.jupiter:junit-jupiter-api:5.0.0")
+ //   testCompile 'junit:junit:4.12'
+    testCompile("org.junit.jupiter:junit-jupiter-api:5.0.1")
 }
 // end::dependencies[]
 
