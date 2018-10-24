@@ -1,10 +1,4 @@
 language: java
 
 script: ./gradlew build
-<<<<<<< HEAD
-#sudo: false # faster builds
 
-#after_success:
-# - bash <(curl -s https://codecov.io/bash)
-=======
->>>>>>> jabedhasan21/master
