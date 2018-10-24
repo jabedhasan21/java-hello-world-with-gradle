@@ -87,12 +87,11 @@ dependencies {
             'org.junit.vintage:junit-vintage-engine:5.1.0'
     )
 }
+// end::dependencies[]
 
 test {
     useJUnitPlatform()
-    testCompile "org.junit.jupiter:junit-jupiter-api:5.0.1"
 }
-// end::dependencies[]
 
 // tag::wrapper[]
 task wrapper(type: Wrapper) {
