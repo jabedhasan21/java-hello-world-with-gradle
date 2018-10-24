@@ -1,5 +1,7 @@
 package hello;
 
+/* a simple junit test */
+
 import org.joda.time.LocalTime;
 
 public class HelloWorld {
