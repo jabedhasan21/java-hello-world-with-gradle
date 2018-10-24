@@ -76,6 +76,7 @@ targetCompatibility = 1.7
 // junit is to run the TestGreeter.java and others
 dependencies {
     compile "joda-time:joda-time:2.2"
+<<<<<<< HEAD
     compile "org.junit.jupiter:junit-jupiter-api:5.0.1"
  //   testCompile 'junit:junit:4.12'
     testCompile "org.junit.jupiter:junit-jupiter-api:5.0.1"
@@ -91,11 +92,18 @@ dependencies {
 
 test {
     useJUnitPlatform()
+=======
+    testCompile "junit:junit:4.12"
+>>>>>>> jabedhasan21/master
 }
 // end::dependencies[]
 
 // tag::wrapper[]
 task wrapper(type: Wrapper) {
+<<<<<<< HEAD
     gradleVersion = '4.6'
+=======
+    gradleVersion = '3.5'
+>>>>>>> jabedhasan21/master
 }
 // end::wrapper[]
