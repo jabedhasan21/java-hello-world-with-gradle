@@ -7,16 +7,7 @@ import org.junit.jupiter.api.Test;
 
 public class TestGreeter {
 
-   private Greeter g;
-
-   @Before
-   public void setUp() throws Exception 
-
-   {
-
-      g = new Greeter();
-
-   }
+   private Greeter g = new Greeter();
 
    @Test
    public void testGreeterEmpty() 
