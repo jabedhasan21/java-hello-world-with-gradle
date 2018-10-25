@@ -93,8 +93,3 @@ test {
     useJUnitPlatform()
 }
 
-// tag::wrapper[]
-task wrapper(type: Wrapper) {
-    gradleVersion = '4.6'
-}
-// end::wrapper[]
