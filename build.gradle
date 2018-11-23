@@ -31,21 +31,39 @@ dependencies {
 }
 */
 
+// The Java plugin adds Java compilation along with testing and bundling capabilities to a project
 apply plugin: 'java'
+// The Eclipse plugins generate files used by Eclipse,  making it possible to import project into Eclipse.
 apply plugin: 'eclipse'
+//The Application plugin facilitates creating an executable JVM application. 
 apply plugin: 'application'
 
+
+sourceSets {
+    main {
+        java { srcDir 'src' }
+        resources { srcDir 'src' }
+    }
+
+    test {
+        resources { srcDir 'test' }
+    }
+}
+
+// mainClassName = 'package.mainClassName'
 mainClassName = 'hello.HelloWorld'
 
 // tag::repositories[]
+// Usually, a Java project will have some dependencies on external JAR files.  Gradle searches here for them
 repositories {
     mavenCentral()
+    jcenter()
 }
 // end::repositories[]
 
 // tag::jar[]
 jar {
-    baseName = 'jb-hello-world'
+    baseName = 'dl-hello-world'
     version =  '0.1.0'
 }
 // end::jar[]
@@ -54,14 +72,29 @@ jar {
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
 
+// joda-time provides the time stamping used in HelloWorld.java
+// junit is to run the TestGreeter.java and others
 dependencies {
     compile "joda-time:joda-time:2.2"
-    testCompile "junit:junit:4.12"
+    compile "org.junit.jupiter:junit-jupiter-api:5.0.1"
+    testCompile "org.junit.jupiter:junit-jupiter-api:5.0.1"
+
+    testImplementation(
+            'org.junit.jupiter:junit-jupiter-api:5.1.0'
+    )
+    testRuntimeOnly(
+            'org.junit.jupiter:junit-jupiter-engine:5.1.0',
+            'org.junit.vintage:junit-vintage-engine:5.1.0'
+    )
 }
 // end::dependencies[]
 
+test {
+    useJUnitPlatform()
+}
+
 // tag::wrapper[]
 task wrapper(type: Wrapper) {
-    gradleVersion = '3.5'
+    gradleVersion = '4.10.2'
 }
 // end::wrapper[]
