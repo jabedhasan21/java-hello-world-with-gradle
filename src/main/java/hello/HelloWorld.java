@@ -1,7 +1,7 @@
 package hello;
 
 /* a simple junit test */
-/* Add more comments */
+/* Add more and more comments */
 
 import org.joda.time.LocalTime;
 
