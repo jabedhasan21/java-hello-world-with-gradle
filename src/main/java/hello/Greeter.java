@@ -24,7 +24,7 @@ public class Greeter {
 
   {
 
-      this.name = name;
+      this.name = name; 
 
   }
 
