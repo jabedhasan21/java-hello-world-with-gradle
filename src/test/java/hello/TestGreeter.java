@@ -34,13 +34,13 @@ public class TestGreeter {
 
 
    @Test
-   public void testSally() 
+   public void testSally()
 
    {
 
       assertEquals(g.getName(),"Sally");
 
-      assertEquals(g.sayHello(),"Heya!");
+      assertEquals(g.sayHello(),"Hey-there!");
 
    }
 	
