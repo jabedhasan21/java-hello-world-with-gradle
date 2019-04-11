@@ -62,4 +62,18 @@ public class TestGreeter {
 
    }
 
+   @Test 
+
+   public void newtestHBWGreeterPass()
+
+   {
+
+      g.setName("Hollie, YOU ARE AMAZING");
+
+      assertEquals(g.getName(),"Hollie, YOU ARE AMAZING");
+
+      assertEquals(g.sayHello(),"Hello Hollie, YOU ARE AMAZING!");
+
+   }
+
 }
