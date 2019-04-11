@@ -40,7 +40,7 @@ public class TestGreeter {
 
    {
 
-      assertEquals(g.getName(),"");
+      assertEquals(g.getName(),"John-Pappas");
 
       assertEquals(g.sayHello(),"Hello!");
 
