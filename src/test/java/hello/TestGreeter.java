@@ -62,4 +62,22 @@ public class TestGreeter {
 
    }
 
+   
+   @Test
+
+   public void testSally()
+
+   {
+
+      g.setName("Sally");
+
+      assertEquals(g.getName(),"Sally");
+
+      assertEquals(g.sayHello(),"Hello Sally!");
+   }
+
+
+
+
+
 }
