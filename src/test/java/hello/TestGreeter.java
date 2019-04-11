@@ -35,15 +35,15 @@ public class TestGreeter {
     
     @Test
     
-    public void newtestJPGreeterPass()
+    public void newtestJPGreeterFail()
     
     {
         
-        g.setName("John");
+        g.setName("SomeCrappyName");
         
-        assertEquals(g.getName(),"John");
+        assertEquals(g.getName(),"SomeCrappyName");
         
-        assertEquals(g.sayHello(),"Hello John!");
+        assertEquals(g.sayHello(),"Hello Person!");
         
     }
     
