@@ -33,14 +33,26 @@ public class TestGreeter {
    }
 
 
+   @Test
+   public void testSally() 
 
+   {
+
+      assertEquals(g.getName(),"Sally");
+
+      assertEquals(g.sayHello(),"Heya!");
+
+   }
+	
+
+	
    @Test
 
    public void testGreeterEmpty() 
 
    {
 
-      assertEquals(g.getName(),"John-Pappas");
+      assertEquals(g.getName()," ");
 
       assertEquals(g.sayHello(),"Hello!");
 
