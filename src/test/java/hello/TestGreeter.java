@@ -31,16 +31,30 @@ public class TestGreeter {
       g = new Greeter();
 
    }
-	
-
-	
+    
+    
+    @Test
+    
+    public void newtestJPGreeterPass()
+    
+    {
+        
+        g.setName("John");
+        
+        assertEquals(g.getName(),"John");
+        
+        assertEquals(g.sayHello(),"Hello John!");
+        
+    }
+    
+    
    @Test
 
    public void testGreeterEmpty() 
 
    {
 
-      assertEquals(g.getName()," ");
+      assertEquals(g.getName(),"");
 
       assertEquals(g.sayHello(),"Hello!");
 
