@@ -76,4 +76,16 @@ public class TestGreeter {
 
    }
 
+   @Test 
+
+   public void newtestHBWGreeterFail()
+
+   {
+
+      assertEquals(g.getName(),"kittens");
+
+      assertEquals(g.sayHello(),"Hello puppies!");
+      
+   }
+
 }
