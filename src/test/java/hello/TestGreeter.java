@@ -31,18 +31,6 @@ public class TestGreeter {
       g = new Greeter();
 
    }
-
-
-   @Test
-   public void testSally()
-
-   {
-
-      assertEquals(g.getName(),"Sally");
-
-      assertEquals(g.sayHello(),"Hey-there!");
-
-   }
 	
 
 	
