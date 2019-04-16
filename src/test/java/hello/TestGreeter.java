@@ -20,11 +20,11 @@ public class TestGreeter {
 
    private Greeter g;
 
-	
+
 
    @Before
 
-   public void setUp() throws Exception 
+   public void setUp() throws Exception
 
    {
 
@@ -36,7 +36,7 @@ public class TestGreeter {
 
    @Test
 
-   public void testGreeterEmpty() 
+   public void testGreeterEmpty()
 
    {
 
@@ -46,11 +46,11 @@ public class TestGreeter {
 
    }
 
-	
+
 
    @Test
 
-   public void testGreeter() 
+   public void testGreeter()
 
    {
 
@@ -61,5 +61,18 @@ public class TestGreeter {
       assertEquals(g.sayHello(),"Hello World!");
 
    }
+
+ @Test
+
+ public void passTestCVGreeterPass()
+ {
+
+    g.setName("Dave");
+
+    assertEquals(g.getName(),"Dave");
+
+    assertEquals(g.sayHello(),"Hello Dave!");
+
+ }
 
 }
