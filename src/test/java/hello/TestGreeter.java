@@ -62,32 +62,19 @@ public class TestGreeter {
 
    }
 
- @Test
+   @Test
 
- public void passTestCVGreeterPass()
- {
+   public void newtestjgGreaterPass()
 
-    g.setName("Dave");
+   {
 
-    assertEquals(g.getName(),"Dave");
+      g.setName("Jacob");
 
-    assertEquals(g.sayHello(),"Hello Dave!");
+      assertEquals(g.getName(),"Jacob");
 
- }
+      assertEquals(g.sayHello(),"Hello Jacob!");
 
- @Test
-
- public void passTestCVGreeterFail()
- {
-
-    g.setName("Kirk");
-
-    assertEquals(g.getName(),"Kirk");
-
-    assertEquals(g.sayHello(),"Hello Dave!");
-
- }
-
+   }
 
 
 }
