@@ -65,15 +65,15 @@ public class TestGreeter {
    
    @Test
 
-   public void testSally()
+   public void newtestJGGreeterPass()
 
    {
 
-      g.setName("Sally");
+      g.setName("Kobe");
 
-      assertEquals(g.getName(),"Sally");
+      assertEquals(g.getName(),"Kobe");
 
-      assertEquals(g.sayHello(),"Hello Sally77");
+      assertEquals(g.sayHello(),"Hello Kobe!");
    }
 
 
