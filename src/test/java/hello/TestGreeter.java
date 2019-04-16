@@ -78,6 +78,20 @@ public class TestGreeter {
 
 
 
+   @Test
+
+   public void newtestJGGreeterFail()
+
+   {
+
+  		String obj1="racecar";
+		String obj2="carrace";
+		assertEquals(obj1,obj2);
+
+      
+
+
+   }
 
 
 }
