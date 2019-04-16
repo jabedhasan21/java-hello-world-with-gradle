@@ -75,4 +75,19 @@ public class TestGreeter {
 
  }
 
+ @Test
+
+ public void passTestCVGreeterFail()
+ {
+
+    g.setName("Kirk");
+
+    assertEquals(g.getName(),"Kirk");
+
+    assertEquals(g.sayHello(),"Hello Dave!");
+
+ }
+
+
+
 }
