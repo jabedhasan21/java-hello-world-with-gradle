@@ -64,7 +64,7 @@ public class TestGreeter {
 
    @Test
 
-   public void newtestcvGreaterPass()
+   public void newtestcvGreaterFail()
 
    {
 
@@ -72,7 +72,7 @@ public class TestGreeter {
 
       assertEquals(g.getName(),"Dave");
 
-      assertEquals(g.sayHello(),"Hello Dave!");
+      assertEquals(g.sayHello(),"Hello World!");
 
    }
 
