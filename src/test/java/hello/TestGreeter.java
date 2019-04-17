@@ -64,15 +64,15 @@ public class TestGreeter {
 
    @Test
 
-   public void newtestjgGreaterPass()
+   public void newtestcvGreaterPass()
 
    {
 
-      g.setName("Jacobs");
+      g.setName("Dave");
 
-      assertEquals(g.getName(),"Jacobs");
+      assertEquals(g.getName(),"Dave");
 
-      assertEquals(g.sayHello(),"Hello Jacobs!");
+      assertEquals(g.sayHello(),"Hello Dave!");
 
    }
 
