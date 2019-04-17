@@ -27,4 +27,11 @@ public class TestGreeter {
       assertEquals(g.getName(),"World");
       assertEquals(g.sayHello(),"Hello World!");
    }
+   
+   @Test
+   public void nettestWMGreeterPass() {
+       g.setName("Boris");
+       assertEquals(g.getName(),"Boris");
+       assertEquals(g.sayHello(),"Hello Boris!");
+   }
 }
