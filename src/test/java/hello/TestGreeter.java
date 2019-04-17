@@ -88,8 +88,6 @@ public class TestGreeter {
 		String obj2="carrace";
 		assertEquals(obj1,obj2);
 
-      
-
 
    }
 
