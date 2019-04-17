@@ -34,49 +34,7 @@ public class TestGreeter {
 
 
 
-   @Test
-
-   public void testGreeterEmpty() 
-
-   {
-
-      assertEquals(g.getName(),"");
-
-      assertEquals(g.sayHello(),"Hello!");
-
-   }
-
-	
-
-   @Test
-
-   public void testGreeter() 
-
-   {
-
-      g.setName("World");
-
-      assertEquals(g.getName(),"World");
-
-      assertEquals(g.sayHello(),"Hello World!");
-
-   }
-
    
-   @Test
-
-   public void newtestJGGreeterPass()
-
-   {
-
-      g.setName("Kobe");
-
-      assertEquals(g.getName(),"Kobe");
-
-      assertEquals(g.sayHello(),"Hello Kobe!");
-   }
-
-
 
    @Test
 
