@@ -62,19 +62,7 @@ public class TestGreeter {
 
    }
 
-   @Test
 
-   public void newtestcvGreaterFail()
-
-   {
-
-      g.setName("Dave");
-
-      assertEquals(g.getName(),"Dave");
-
-      assertEquals(g.sayHello(),"Hello World!");
-
-   }
 
 
 }
