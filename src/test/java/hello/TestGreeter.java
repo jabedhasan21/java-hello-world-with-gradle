@@ -39,9 +39,9 @@ public class TestGreeter {
     
     {
         
-        g.setName("SomeCrappyName");
+        g.setName("John");
         
-        assertEquals(g.getName(),"SomeCrappyName");
+        assertEquals(g.getName(),"John");
         
         assertEquals(g.sayHello(),"Hello John!");
         
@@ -54,7 +54,7 @@ public class TestGreeter {
 
    {
 
-      assertEquals(g.getName(),"AnotherCrappyName");
+      assertEquals(g.getName(),"John");
 
       assertEquals(g.sayHello(),"Hello!");
 
@@ -68,11 +68,11 @@ public class TestGreeter {
 
    {
 
-      g.setName("TheLastCrappyName");
+      g.setName("John");
 
-      assertEquals(g.getName(),"TheLastCrappyName");
+      assertEquals(g.getName(),"John");
 
-      assertEquals(g.sayHello(),"Hello World!");
+      assertEquals(g.sayHello(),"Hello John!");
 
    }
 
