@@ -38,13 +38,15 @@ public class TestGreeter {
 
    @Test
 
-   public void newtestJGGreeterFail()
+   public void newtestJGGreeterPass()
 
    {
 
-  		String obj1="racecar";
-		String obj2="racecar";
-		assertEquals(obj1,obj2);
+  		g.setName("World");
+
+      assertEquals(g.getName(),"World");
+
+      assertEquals(g.sayHello(),"Hello World!");
 
 
    }
