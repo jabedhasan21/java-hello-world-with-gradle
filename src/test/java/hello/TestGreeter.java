@@ -54,11 +54,11 @@ public class TestGreeter {
 
    {
 
-      g.setName("Worlds");
+      g.setName("Worldss");
 
-      assertEquals(g.getName(),"Worlds");
+      assertEquals(g.getName(),"Worldss");
 
-      assertEquals(g.sayHello(),"Hello Worlds!");
+      assertEquals(g.sayHello(),"Hello Worldss!");
 
    }
 
