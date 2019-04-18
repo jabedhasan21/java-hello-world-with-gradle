@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="hello.TestGreeter" tests="4" skipped="0" failures="1" errors="0" timestamp="2019-04-16T23:50:13" hostname="Jaysens-MacBook-Pro.local" time="0.003">
+<testsuite name="hello.TestGreeter" tests="1" skipped="0" failures="1" errors="0" timestamp="2019-04-17T00:35:53" hostname="Jaysens-MacBook-Pro.local" time="0.002">
   <properties/>
   <testcase name="newtestJGGreeterFail" classname="hello.TestGreeter" time="0.002">
     <failure message="org.junit.ComparisonFailure: expected:&lt;[racecar]&gt; but was:&lt;[carrace]&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: expected:&lt;[racecar]&gt; but was:&lt;[carrace]&gt;
 	at org.junit.Assert.assertEquals(Assert.java:115)
 	at org.junit.Assert.assertEquals(Assert.java:144)
-	at hello.TestGreeter.newtestJGGreeterFail(TestGreeter.java:89)
+	at hello.TestGreeter.newtestJGGreeterFail(TestGreeter.java:47)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -56,9 +56,6 @@
 	at java.base/java.lang.Thread.run(Thread.java:844)
 </failure>
   </testcase>
-  <testcase name="newtestJGGreeterPass" classname="hello.TestGreeter" time="0.0"/>
-  <testcase name="testGreeter" classname="hello.TestGreeter" time="0.0"/>
-  <testcase name="testGreeterEmpty" classname="hello.TestGreeter" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
