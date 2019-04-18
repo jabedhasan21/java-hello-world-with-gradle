@@ -1,3 +1,39 @@
 language: java
+# the following will skip the installation of dependencies.
+install: true
 
-script: ./gradlew build
+# the following forces the use of JDK 8 
+# adding comment to kick off build
+# matrix:
+#  include:
+# - jdk: oraclejdk8
+  
+script:
+  - gradle clean build
+  - gradle dist --rerun-tasks
+# - gradle distSetup --rerun-tasks
+# - gradle zipDist --rerun-tasks
+# - gradle zipTest --rerun-tasks
+
+before_deploy:
+  - git config --global user.email "builds@travis-ci.com"
+  - git config --global user.name "Travis CI"
+  - export GIT_TAG=$TRAVIS_BRANCH.$29
+  - git tag $GIT_TAG -a -m "Generated tag from TravisCI for build $29"
+  - git push -q https://$GITPERM@github.com/drlehr/java-hello-world-with-gradle  --tags
+  - ls -R
+  
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key: 
+    secure: $GITPERM
+    
+  file:
+  - "README.md"
+  - "build.gradle"
+  - ".travis.yml"
+  
+  on:
+    tags: false
+    all_branches: true
