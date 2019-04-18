@@ -78,7 +78,7 @@ public class TestGreeter {
 
    @Test 
 
-   public void newtestHBWGreeterPass()
+   public void newtestHBWGreeterPass2()
 
    {
 
