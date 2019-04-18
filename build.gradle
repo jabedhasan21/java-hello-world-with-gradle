@@ -6,62 +6,72 @@
  * For more details take a look at the Java Quickstart chapter in the Gradle
  * user guide available at https://docs.gradle.org/2.8/userguide/tutorial_java_projects.html
  */
-
-/*
-// Apply the java plugin to add support for Java
-apply plugin: 'java'
-
-// In this section you declare where to find the dependencies of your project
-repositories {
-    // Use 'jcenter' for resolving your dependencies.
-    // You can declare any Maven/Ivy/file repository here.
-    jcenter()
-}
-
-// In this section you declare the dependencies for your production and test code
-dependencies {
-    // The production code uses the SLF4J logging API at compile time
-    compile 'org.slf4j:slf4j-api:1.7.12'
-
-    // Declare the dependency for your favourite test framework you want to use in your tests.
-    // TestNG is also supported by the Gradle Test task. Just change the
-    // testCompile dependency to testCompile 'org.testng:testng:6.8.1' and add
-    // 'test.useTestNG()' to your build script.
-    testCompile 'junit:junit:4.12'
-}
-*/
-
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'application'
-
 mainClassName = 'hello.HelloWorld'
-
 // tag::repositories[]
 repositories {
     mavenCentral()
 }
 // end::repositories[]
-
 // tag::jar[]
 jar {
     baseName = 'jb-hello-world'
     version =  '0.1.0'
 }
 // end::jar[]
-
 // tag::dependencies[]
-sourceCompatibility = 1.7
-targetCompatibility = 1.7
-
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 dependencies {
     compile "joda-time:joda-time:2.2"
-    testCompile "junit:junit:4.12"
+    testCompile "org.junit.jupiter:junit-jupiter-api:5.0.1"
+// the following is a work around to fix the warning:
+//          warning: unknown enum constant Status.STABLE
+    testCompileOnly "org.apiguardian:apiguardian-api:1.0.0"
 }
 // end::dependencies[]
-
+task dist {
+    description "Generate the dist(s) into the dist folder."
+}
+task distSetup {
+    description "Generate the dist folder."
+    delete "${projectDir}/dist"
+    copy {
+        from "${buildDir}/libs"
+        into "${projectDir}/dist/main"
+    }
+    copy {
+        from "${projectDir}/build/classes/test/Output"
+        into "${projectDir}/dist/test"
+    }
+}
+task zipDist(type: Zip, dependsOn: distSetup) {
+    from "${projectDir}/dist/main"
+    from "${projectDir}/Readme.md"
+    destinationDir = file("${projectDir}/dist")
+    version = "${version}"
+    appendix = "Main"
+    doLast {
+        println "Created ${zipDist.archiveName}"
+    }
+}
+task zipTest(type: Zip, dependsOn: distSetup) {
+    from "${projectDir}/dist/test"
+    from "${projectDir}/Readme.md"
+    destinationDir = file("${projectDir}/dist")
+    version = "${version}"
+    appendix = "Test Output"
+    doLast{
+        println "Created ${zipTest.archiveName}"
+    }
+}
+distSetup.dependsOn(build)
+dist.dependsOn(zipDist)
+dist.dependsOn(zipTest)
 // tag::wrapper[]
 task wrapper(type: Wrapper) {
-    gradleVersion = '3.5'
+    gradleVersion = '4.9'
 }
 // end::wrapper[]
