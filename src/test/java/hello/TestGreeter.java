@@ -34,32 +34,20 @@ public class TestGreeter {
 
 
 
-   @Test
-
-   public void testGreeterEmpty() 
-
-   {
-
-      assertEquals(g.getName(),"");
-
-      assertEquals(g.sayHello(),"Hello!");
-
-   }
-
-	
+   
 
    @Test
 
-   public void testGreeter() 
+   public void newtestJGGreeterFail()
 
    {
 
-      g.setName("World");
+  		String obj1="racecar";
+		String obj2="carrace";
+		assertEquals(obj1,obj2);
 
-      assertEquals(g.getName(),"World");
-
-      assertEquals(g.sayHello(),"Hello World!");
 
    }
+
 
 }
