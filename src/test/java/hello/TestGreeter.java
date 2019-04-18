@@ -33,20 +33,6 @@ public class TestGreeter {
    }
     
     
-    @Test
-    
-    public void newtestJPGreeterFail()
-    
-    {
-        
-        g.setName("John");
-        
-        assertEquals(g.getName(),"John");
-        
-        assertEquals(g.sayHello(),"Hello John!");
-        
-    }
-    
     
    @Test
 
@@ -54,7 +40,7 @@ public class TestGreeter {
 
    {
 
-      assertEquals(g.getName(),"John");
+      assertEquals(g.getName(),"");
 
       assertEquals(g.sayHello(),"Hello!");
 
