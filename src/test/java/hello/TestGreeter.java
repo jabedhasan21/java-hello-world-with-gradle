@@ -31,9 +31,9 @@ public class TestGreeter {
       g = new Greeter();
 
    }
-
-
-
+    
+    
+    
    @Test
 
    public void testGreeterEmpty() 
@@ -54,11 +54,11 @@ public class TestGreeter {
 
    {
 
-      g.setName("World");
+      g.setName("John");
 
-      assertEquals(g.getName(),"World");
+      assertEquals(g.getName(),"John");
 
-      assertEquals(g.sayHello(),"Hello World!");
+      assertEquals(g.sayHello(),"Hello John!");
 
    }
 
