@@ -76,7 +76,7 @@ public class TestGreeter {
 
    }
 
-   @Test 
+   /*@Test 
 
    public void newtestHBWGreeterFail()
 
@@ -86,6 +86,6 @@ public class TestGreeter {
 
       assertEquals(g.sayHello(),"Hello puppies!");
       
-   }
+   }*/
 
 }
