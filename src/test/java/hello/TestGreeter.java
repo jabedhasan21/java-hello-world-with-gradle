@@ -43,7 +43,7 @@ public class TestGreeter {
    {
 
   		String obj1="racecar";
-		String obj2="carrace";
+		String obj2="racecar";
 		assertEquals(obj1,obj2);
 
 
