@@ -4,43 +4,58 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+
 public class TestGreeter {
    private Greeter g;
    @Before
-   public void setUp() throws Exception 
-   {
+   public void setUp() throws Exception {
       g = new Greeter();
    }
 
 
    @Test
-   public void testGreeterEmpty() 
-   {
+   public void testGreeterEmpty() {
       assertEquals(g.getName(),"");
       assertEquals(g.sayHello(),"Hello!");
    }
 
    @Test
-   public void testGreeter() 
-   {
+   public void testGreeter() {
       g.setName("World");
       assertEquals(g.getName(),"World");
       assertEquals(g.sayHello(),"Hello World!");
    }
-   
-   @Test
+
+   @Test 
+   public void newtestHBWGreeterPass() {
+
+      g.setName("Hollie, YOU ARE AMAZING");
+
+      assertEquals(g.getName(),"Hollie, YOU ARE AMAZING");
+
+      assertEquals(g.sayHello(),"Hello Hollie, YOU ARE AMAZING!");
+
+   }
+
+   @Test 
+   public void newtestHBWGreeterPass2(){
+
+      g.setName("Hollie");
+
+      assertEquals(g.getName(),"Hollie");
+
+      assertEquals(g.sayHello(),"Hello Hollie!");
+
+   }
+
+ @Test
    public void newtestWMGreeterPass() {
        g.setName("Boris");
        assertEquals(g.getName(),"Boris");
        assertEquals(g.sayHello(),"Hello Boris!");
    }
-   /*
-   @Test
-   public void newtestWMGreeterFail() {
-       g.setName("Sandvich");
-       assertEquals(g.getName(),"Boris");
-       assertEquals(g.sayHello(),"Hello Boris!");
-   }
-   */
-   
 }
+
+   
+ 
+
