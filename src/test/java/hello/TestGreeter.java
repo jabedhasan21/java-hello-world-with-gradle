@@ -6,58 +6,28 @@ import org.junit.Test;
 
 
 public class TestGreeter {
-
-
-
    private Greeter g;
-
-	
-
    @Before
-
-   public void setUp() throws Exception 
-
-   {
-
+   public void setUp() throws Exception {
       g = new Greeter();
-
    }
 
 
-
    @Test
-
-   public void testGreeterEmpty() 
-
-   {
-
+   public void testGreeterEmpty() {
       assertEquals(g.getName(),"");
-
       assertEquals(g.sayHello(),"Hello!");
-
    }
 
-	
-
    @Test
-
-   public void testGreeter() 
-
-   {
-
+   public void testGreeter() {
       g.setName("World");
-
       assertEquals(g.getName(),"World");
-
       assertEquals(g.sayHello(),"Hello World!");
-
    }
 
    @Test 
-
-   public void newtestHBWGreeterPass()
-
-   {
+   public void newtestHBWGreeterPass() {
 
       g.setName("Hollie, YOU ARE AMAZING");
 
@@ -68,10 +38,7 @@ public class TestGreeter {
    }
 
    @Test 
-
-   public void newtestHBWGreeterPass2()
-
-   {
+   public void newtestHBWGreeterPass2(){
 
       g.setName("Hollie");
 
@@ -81,18 +48,14 @@ public class TestGreeter {
 
    }
 
-   //test2
-
-   /*@Test 
-
-   public void newtestHBWGreeterFail()
-
-   {
-
-      assertEquals(g.getName(),"kittens");
-
-      assertEquals(g.sayHello(),"Hello puppies!");
-      
-   }*/
-
+ @Test
+   public void newtestWMGreeterPass() {
+       g.setName("Boris");
+       assertEquals(g.getName(),"Boris");
+       assertEquals(g.sayHello(),"Hello Boris!");
+   }
 }
+
+   
+ 
+
