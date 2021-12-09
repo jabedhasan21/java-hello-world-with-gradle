@@ -1,12 +1,18 @@
 pipeline {
      agent any
      stages {
-         stage('Build') {
+         stage('Clean Workspace') {
              steps {
-                  deleteDir()
-                  checkout scm
-                  sh './gradlew clean build'
+                  deleteDir()                  
              }
+         stage('Clone Project') {
+             steps {                  
+                  checkout scm                  
+             }
+         stage('Build') {
+             steps {                  
+                  sh './gradlew clean build'
+             }              
              post {
                  always {
                      jiraSendBuildInfo site: 'bashsquad.atlassian.net'
