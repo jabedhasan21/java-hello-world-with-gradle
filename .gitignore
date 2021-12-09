@@ -12,6 +12,7 @@ Thumbs.db
 
 .gradle/
 target/
+build/
 dependency-reduced-pom.xml
 
 # Eclipse Project Files
