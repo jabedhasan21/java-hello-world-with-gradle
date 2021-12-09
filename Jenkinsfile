@@ -5,7 +5,7 @@ pipeline {
              steps {
                   deleteDir()
                   checkout scm
-                  gradlew('assemble')
+                  sh './gradlew clean build'
              }
              post {
                  always {
