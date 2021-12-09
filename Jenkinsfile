@@ -5,6 +5,7 @@ pipeline {
              steps {
                   deleteDir()
                   checkout scm
+                  gradlew('assemble')
              }
              post {
                  always {
