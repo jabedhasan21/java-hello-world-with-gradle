@@ -5,10 +5,12 @@ pipeline {
              steps {
                   deleteDir()                  
              }
+         }
          stage('Clone Project') {
              steps {                  
                   checkout scm                  
              }
+         }
          stage('Build') {
              steps {                  
                   sh './gradlew clean build'
