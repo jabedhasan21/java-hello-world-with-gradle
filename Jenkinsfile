@@ -3,7 +3,8 @@ pipeline {
      stages {
          stage('Build') {
              steps {
-                 echo 'Building...'
+                  deleteDir()
+                  checkout scm
              }
              post {
                  always {
