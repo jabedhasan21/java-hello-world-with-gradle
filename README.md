@@ -4,7 +4,7 @@
 
 ### What you’ll need
 + A favorite text editor or IDE
-+ JDK 6 or later
++ JDK 8 or later
 + Install Gradle
 
 ### Install Gradle
