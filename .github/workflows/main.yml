@@ -1,15 +1,22 @@
-name: abc
-
+name: Maven Build
 on:
   push:
-    branches: [main]
-  pull_request:
-  workflow_dispatch:
-
+    branches:
+      - main
 jobs:
   build:
+    name: "Maven Build"
     runs-on: ubuntu-latest
-    
     steps:
-      - uses: actions/checkout@v2
-      - run: echo "Build successful"
+      - name: "Checkout Sources"
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
+      - name: "Set up JDK"
+        uses: actions/setup-java@v2
+        with:
+          distribution: "temurin"
+          java-version: 11
+          cache: "maven"
+      - name: "Build with Maven"
+        run: mvn verify
