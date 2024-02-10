@@ -51,14 +51,12 @@ jar {
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
 
+
 dependencies {
-    compile "joda-time:joda-time:2.2"
-    testCompile "junit:junit:4.12"
+    implementation group: 'joda-time', name: 'joda-time', version: '2.12.5'
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
 }
 // end::dependencies[]
 
-// tag::wrapper[]
-task wrapper(type: Wrapper) {
-    gradleVersion = '3.5'
-}
+
 // end::wrapper[]
